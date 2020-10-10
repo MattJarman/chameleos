@@ -1,14 +1,14 @@
 import GenericIndexItem from '../interfaces/GenericIndexItem'
 
 export default class Helper {
-  public search (index: Array<GenericIndexItem>, search: string): GenericIndexItem {
+  public static search (index: Array<GenericIndexItem>, search: string): GenericIndexItem {
     let minDistance = Number.MAX_SAFE_INTEGER
     search = search.toLowerCase()
 
     let found = index[0]
     for (const item of index) {
       const name = item.name.toLowerCase()
-      const distance = this.levenshteinDistance(search, name)
+      const distance = Helper.levenshteinDistance(search, name)
 
       if (distance < minDistance) {
         minDistance = distance
@@ -19,8 +19,8 @@ export default class Helper {
     return found
   }
 
-  public levenshteinDistance (a: string, b: string): number {
-    const matrix = this.createEmptyMatrix(a.length + 1, b.length + 1)
+  public static levenshteinDistance (a: string, b: string): number {
+    const matrix = Helper.createEmptyMatrix(a.length + 1, b.length + 1)
 
     for (let i = 0; i <= a.length; i++) {
       matrix[i][0] = i
@@ -44,7 +44,15 @@ export default class Helper {
     return matrix[a.length][b.length]
   }
 
-  public createEmptyMatrix (width: number, height: number): number[][] {
+  public static createEmptyMatrix (width: number, height: number): number[][] {
     return Array(width).fill(0).map(() => Array(height).fill(0))
+  }
+
+  public static capitalise (word: string): string {
+    return word
+      .toLowerCase()
+      .split(' ')
+      .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' ')
   }
 }

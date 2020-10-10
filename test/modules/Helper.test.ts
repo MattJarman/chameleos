@@ -1,8 +1,6 @@
 import Helper from '../../src/modules/Helper'
 import GenericIndexItem from '../../src/interfaces/GenericIndexItem'
 
-const helper = new Helper()
-
 const index: Array<GenericIndexItem> = [
   {
     id: 1,
@@ -30,8 +28,18 @@ describe('Test createEmptyMatrix', () => {
       [0, 0, 0],
       [0, 0, 0]
     ]
-    const actual = helper.createEmptyMatrix(width, height)
+    const actual = Helper.createEmptyMatrix(width, height)
 
+    expect(actual).toEqual(expected)
+  })
+})
+
+describe('Test capitalise', () => {
+  it('capitalises the first letter of a word', () => {
+    const word = 'hello'
+    const expected = 'Hello'
+
+    const actual = Helper.capitalise(word)
     expect(actual).toEqual(expected)
   })
 })
@@ -42,7 +50,7 @@ describe('Test levenshteinDistance', () => {
     const stringB = 'hello'
     const expected = 0
 
-    const actual = helper.levenshteinDistance(stringA, stringB)
+    const actual = Helper.levenshteinDistance(stringA, stringB)
 
     expect(actual).toEqual(expected)
   })
@@ -52,7 +60,7 @@ describe('Test levenshteinDistance', () => {
     const stringB = 'hello'
     const expected = 1
 
-    const actual = helper.levenshteinDistance(stringA, stringB)
+    const actual = Helper.levenshteinDistance(stringA, stringB)
 
     expect(actual).toEqual(expected)
   })
@@ -62,7 +70,7 @@ describe('Test levenshteinDistance', () => {
     const stringB = 'hello'
     const expected = 5
 
-    const actual = helper.levenshteinDistance(stringA, stringB)
+    const actual = Helper.levenshteinDistance(stringA, stringB)
 
     expect(actual).toEqual(expected)
   })
@@ -78,7 +86,7 @@ describe('Test search', () => {
       url: 'https://example.com/sarah'
     }
 
-    const actual = helper.search(index, search)
+    const actual = Helper.search(index, search)
     expect(actual).toEqual(expected)
   })
 
@@ -91,7 +99,7 @@ describe('Test search', () => {
       url: 'https://example.com/john'
     }
 
-    const actual = helper.search(index, search)
+    const actual = Helper.search(index, search)
     expect(actual).toEqual(expected)
   })
 
@@ -104,7 +112,7 @@ describe('Test search', () => {
       url: 'https://example.com/nathan'
     }
 
-    const actual = helper.search(index, search)
+    const actual = Helper.search(index, search)
     expect(actual).toEqual(expected)
   })
 })
