@@ -4,7 +4,7 @@
   "description": "A Monster Hunter: World Discord bot.",
   "main": "./dist/app.js",
   "scripts": {
-    "start": "nodemon -e ts --exec \"tsc - tsconfig.build.json && node ./dist/app.js\""
+    "start": "nodemon -e ts --exec \"tsc -p tsconfig.build.json && node ./dist/app.js || exit 1\""
   },
   "author": {
     "name": "Matthew Jarman",
@@ -12,7 +12,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/config": "0.0.36",
     "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.8",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.11.0",
@@ -26,5 +28,10 @@
     "nodemon": "^2.0.4",
     "ts-jest": "^26.4.1",
     "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "config": "^3.3.2",
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0"
   }
 }

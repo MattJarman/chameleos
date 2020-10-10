@@ -5,6 +5,8 @@ module.exports = {
   },
   extends: [
     'standard',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended'
   ],
   parser: '@typescript-eslint/parser',
@@ -16,5 +18,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-  }
+    '@typescript-eslint/no-var-requires': 'off'
+  },
+  ignorePatterns: [ '**/*.js', '**/*.d.ts']
 }
