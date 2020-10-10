@@ -6,11 +6,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-  },
-  "exclude": [
-    "dist",
-    "test",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ]
+  }
 }
