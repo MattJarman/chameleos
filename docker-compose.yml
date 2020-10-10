@@ -7,10 +7,9 @@ services:
       dockerfile: ./docker/node/Dockerfile
     container_name: chameleos-node
     volumes:
-      - node_modules:/var/www/node_modules
-      - .:/var/www
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
     restart: unless-stopped
-    working_dir: /var/www
     ports:
       - "80:8080"
 volumes:
