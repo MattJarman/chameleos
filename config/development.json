@@ -1,10 +1,8 @@
 {
   "mhw-api": {
-    "base_url": "http://192.168.0.32:8989",
+    "base-url": "http://192.168.0.48:8989",
     "routes": {
-      "monster": {
-        "index": "/monster"
-      }
+      "monster": "api/monster"
     }
   }
 }

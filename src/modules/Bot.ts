@@ -6,7 +6,7 @@ import config from 'config'
 export default class Bot {
     private client: CommandClient
 
-    constructor (token: string) {
+    public constructor (token: string) {
       this.client = new Client()
       this.client.login(token)
 
