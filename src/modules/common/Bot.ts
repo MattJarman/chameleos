@@ -15,7 +15,7 @@ export default class Bot {
 
     public listen (): void {
       this.client.on('ready', () => {
-        console.log(`Logged in as ${this.client?.user?.tag}`)
+        console.log(`Logged in as ${this.client.user?.tag}`)
       })
 
       this.client.on('message', message => {
