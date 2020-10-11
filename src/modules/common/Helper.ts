@@ -1,4 +1,4 @@
-import GenericIndexItem from '../interfaces/GenericIndexItem'
+import GenericIndexItem from '../../interfaces/GenericIndexItem'
 
 export default class Helper {
   public static search (index: Array<GenericIndexItem>, search: string): GenericIndexItem {

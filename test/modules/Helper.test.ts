@@ -1,4 +1,4 @@
-import Helper from '../../src/modules/Helper'
+import Helper from '../../src/modules/common/Helper'
 import GenericIndexItem from '../../src/interfaces/GenericIndexItem'
 
 const index: Array<GenericIndexItem> = [

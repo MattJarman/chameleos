@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv'
-import Bot from './modules/Bot'
+import Bot from './modules/common/Bot'
 
 dotenv.config()
 

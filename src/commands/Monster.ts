@@ -1,6 +1,6 @@
 import { Message, MessageEmbed, MessageAttachment, FileOptions } from 'discord.js'
-import MHWClient from '../modules/MHWClient'
-import Helper from '../modules/Helper'
+import MHWClient from '../modules/common/MHWClient'
+import Helper from '../modules/common/Helper'
 import Monster from '../interfaces/monster/Monster'
 
 module.exports = {

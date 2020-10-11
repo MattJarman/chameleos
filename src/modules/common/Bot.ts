@@ -1,5 +1,5 @@
 import { Client, Message, Collection } from 'discord.js'
-import CommandClient from '../interfaces/CommandClient'
+import CommandClient from '../../interfaces/CommandClient'
 import fs from 'fs'
 import config from 'config'
 
@@ -33,7 +33,7 @@ export default class Bot {
 
       for (const file of files) {
         // TODO: Add interface for commands
-        const command = require(`../commands/${file}`)
+        const command = require(`../../commands/${file}`)
         this.client.commands.set(command.name, command)
       }
     }
