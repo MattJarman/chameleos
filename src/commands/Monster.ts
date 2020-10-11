@@ -1,9 +1,9 @@
-import { Message } from 'discord.js'
+import { Message, Command } from 'discord.js'
 import MHWClient from '../modules/common/MHWClient'
 import Helper from '../modules/common/Helper'
 import MonsterMapper from '../modules/mappers/MonsterMapper'
 
-module.exports = {
+export = {
   name: 'monster',
   description: 'Display basic information about a monster.',
   async execute (message: Message, args: Array<string>) {
