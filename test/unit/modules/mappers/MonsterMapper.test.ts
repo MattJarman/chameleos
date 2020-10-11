@@ -7,7 +7,7 @@ import fs from 'fs'
 const monster: Monster = JSON.parse(fs.readFileSync('./test/test-files/monster-31.json', 'utf-8'))
 
 describe('Test MonsterMapper', () => {
-  it('maps the monster data to an message embed', () => {
+  it('maps the monster data to a message embed', () => {
     const message = (new MonsterMapper(monster)).getMessage()
 
     expect(message.title).toEqual(monster.name)
@@ -81,5 +81,18 @@ describe('Test MonsterMapper', () => {
         inline: false
       }
     )
+  })
+
+  it('sets species as \'N/A\' if none is returned', () => {
+    const noSpeciesMonster = { ...monster }
+    noSpeciesMonster.species = null
+
+    const message = (new MonsterMapper(noSpeciesMonster)).getMessage()
+
+    expect(message.fields).toContainEqual({
+      name: 'Species',
+      value: 'N/A',
+      inline: true
+    })
   })
 })

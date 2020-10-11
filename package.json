@@ -4,7 +4,11 @@
   "description": "A Monster Hunter: World Discord bot.",
   "main": "./dist/app.js",
   "scripts": {
-    "start": "nodemon -e ts --exec \"tsc -p tsconfig.build.json && node ./dist/app.js || exit 1\""
+    "start": "nodemon -e ts --exec \"tsc -p tsconfig.build.json && node ./dist/app.js || exit 1\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint , --fix"
   },
   "author": {
     "name": "Matthew Jarman",
