@@ -1,6 +1,6 @@
-import Monster from '../../../src/interfaces/monster/Monster'
-import MonsterMapper from '../../../src/modules/mappers/MonsterMapper'
-import Helper from '../../../src/modules/common/Helper'
+import Monster from '../../../../src/interfaces/monster/Monster'
+import MonsterMapper from '../../../../src/modules/mappers/MonsterMapper'
+import Helper from '../../../../src/modules/common/Helper'
 import fs from 'fs'
 
 // Rathalos

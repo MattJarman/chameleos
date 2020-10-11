@@ -1,5 +1,5 @@
-import Helper from '../../../src/modules/common/Helper'
-import GenericIndexItem from '../../../src/interfaces/GenericIndexItem'
+import Helper from '../../../../src/modules/common/Helper'
+import GenericIndexItem from '../../../../src/interfaces/GenericIndexItem'
 
 const index: Array<GenericIndexItem> = [
   {
