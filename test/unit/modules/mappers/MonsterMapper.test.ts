@@ -6,7 +6,7 @@ import fs from 'fs'
 // Rathalos
 const monster: Monster = JSON.parse(fs.readFileSync('./test/test-files/monster-31.json', 'utf-8'))
 
-describe('Test MonsterMapper', () => {
+describe('MonsterMapper', () => {
   it('maps the monster data to a message embed', () => {
     const message = (new MonsterMapper(monster)).getMessage()
 

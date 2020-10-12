@@ -8,7 +8,7 @@ import Monster from '../../../src/interfaces/monster/Monster'
 const axiosMock = new MockAdapter(axios)
 const monster: Monster = JSON.parse(fs.readFileSync('./test/test-files/monster-31.json', 'utf-8'))
 
-describe('Test Monster Command', () => {
+describe('Monster', () => {
   const message = {
     channel: {
       send: jest.fn()
