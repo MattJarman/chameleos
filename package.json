@@ -5,6 +5,7 @@
   "main": "./dist/app.js",
   "scripts": {
     "start": "nodemon -e ts --exec \"tsc -p tsconfig.build.json && node ./dist/app.js || exit 1\"",
+    "build": "tsc -p tsconfig.build.json",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint .",
