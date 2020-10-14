@@ -1,0 +1,8 @@
+{
+  "mhw-api": {
+    "base-url": "https://mhw-api.co.uk",
+    "routes": {
+      "monster": "api/monster"
+    }
+  }
+}
