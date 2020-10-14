@@ -40,7 +40,7 @@ describe('Bot', () => {
   })
 
   describe('.setCommands()', () => {
-    it('set commands', () => {
+    it('sets a test command into the command collection', () => {
       const bot = new Bot('test-token')
 
       expect(fs.readdirSync).toBeCalled()
