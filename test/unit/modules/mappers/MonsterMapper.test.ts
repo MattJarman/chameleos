@@ -58,7 +58,7 @@ describe('MonsterMapper', () => {
   })
 
   it('does not include weaknesses if the monster has no weaknesses', () => {
-    const noWeaknessMonster = { ...monster }
+    const noWeaknessMonster = JSON.parse(JSON.stringify(monster))
     noWeaknessMonster.weaknesses.dragon = 0
     noWeaknessMonster.weaknesses.fire = 0
     noWeaknessMonster.weaknesses.thunder = 0
@@ -84,7 +84,7 @@ describe('MonsterMapper', () => {
   })
 
   it('sets species as \'N/A\' if none is returned', () => {
-    const noSpeciesMonster = { ...monster }
+    const noSpeciesMonster = JSON.parse(JSON.stringify(monster))
     noSpeciesMonster.species = null
 
     const message = (new MonsterMapper(noSpeciesMonster)).getMessage()
