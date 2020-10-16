@@ -5,12 +5,11 @@ services:
     build:
       context: ./
       dockerfile: ./docker/node/Dockerfile
+    user: "1000:1000"
     container_name: chameleos-node
     volumes:
       - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
+      - /home/node/app/node_modules
     restart: unless-stopped
     ports:
       - "80:8080"
-volumes:
-  node_modules:
