@@ -37,7 +37,7 @@ describe('Bot', () => {
       clearAllMocks()
     })
 
-    it('logs the client id on ready event', () => {
+    it('logs the client tag on ready event', () => {
       jest.spyOn(console, 'log')
       console.log = jest.fn()
       mockOnReadyEvent()
@@ -47,7 +47,7 @@ describe('Bot', () => {
       expect(console.log).toBeCalledWith('Logged in as TestBot#1234')
     })
 
-    it('does not do thing', () => {
+    it('logs an error if the client user does not exist', () => {
       jest.spyOn(console, 'error')
       console.error = jest.fn()
       mockOnReadyEvent()
@@ -127,7 +127,7 @@ describe('Bot', () => {
   })
 })
 
-function mockOnMessageEvent (message: any): void {
+function mockOnMessageEvent (message: Message): void {
   onEventMock.mockImplementation((event, handler) => {
     if (event === 'message') {
       handler(message)
