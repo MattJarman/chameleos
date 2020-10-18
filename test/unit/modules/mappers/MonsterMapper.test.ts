@@ -4,7 +4,7 @@ import Helper from '../../../../src/modules/common/Helper'
 import fs from 'fs'
 
 // Rathalos
-const monster: Monster = JSON.parse(fs.readFileSync('./test/test-files/monster-31.json', 'utf-8'))
+const monster: Monster = JSON.parse(fs.readFileSync('./test/test-files/monster/31.json', 'utf-8'))
 
 describe('MonsterMapper', () => {
   it('maps the monster data to a message embed', () => {

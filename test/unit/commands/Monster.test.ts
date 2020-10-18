@@ -6,7 +6,7 @@ import fs from 'fs'
 import Monster from '../../../src/interfaces/monster/Monster'
 
 const axiosMock = new MockAdapter(axios)
-const monster: Monster = JSON.parse(fs.readFileSync('./test/test-files/monster-31.json', 'utf-8'))
+const monster: Monster = JSON.parse(fs.readFileSync('./test/test-files/31.json', 'utf-8'))
 
 describe('Monster', () => {
   const message = {
