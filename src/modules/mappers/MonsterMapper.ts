@@ -1,11 +1,11 @@
-import { MessageEmbed, MessageAttachment, FileOptions } from 'discord.js'
+import { MessageEmbed, MessageAttachment, FileOptions, Emoji } from 'discord.js'
 import Monster from '../../interfaces/monster/Monster'
 import Helper from '../common/Helper'
 
 export default class MonsterMapper {
     private readonly WEAKNESS_FILTER = ['sleep', 'paralysis', 'stun', 'poison', 'blast']
     private readonly WEAKNESS_AMOUNT = 3
-    private readonly STAR = '⭐'
+    private readonly STAR = ':star:'
 
     private monster: Monster
     private message: MessageEmbed
@@ -59,7 +59,10 @@ export default class MonsterMapper {
       for (const weakness of sorted) {
         const name = Helper.capitalise(weakness[0])
         const value = this.STAR.repeat(weakness[1])
-        this.message.addField(name, value, true)
+
+        // We append whitespace onto the end of the emojis as otherwise
+        // they'll be massive on mobile
+        this.message.addField(name, `${value}\u200b`, true)
       }
     }
 }

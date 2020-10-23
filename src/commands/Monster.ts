@@ -20,6 +20,7 @@ export = {
 
       await message.channel.send(embed)
     } catch (error) {
+      console.error(error)
       await message.reply('I had a problem completing that request.')
     }
   }
