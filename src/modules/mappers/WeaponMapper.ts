@@ -21,5 +21,33 @@ export default class WeaponMapper {
     this.message.setTitle(this.weapon.name)
       .attachFiles((icon as (MessageAttachment | FileOptions | string)[]))
       .setThumbnail('attachment://icon.png')
+      .addField('Attack', this.weapon.attack, true)
+      .addField('Affinity', `${this.weapon.affinity}%`, true)
+      .addField('Defense', this.weapon.defense, true)
+
+    if (this.weapon.elements.length !== 0) {
+      this.mapElements()
+    }
+
+    this.mapElderSeal()
+  }
+
+  private mapElements (): void {
+    let elementsString = ''
+    for (const element of this.weapon.elements) {
+      elementsString += `${element.element} ${element.hidden ? '(hidden)' : ''} - ${element.attack}\n`
+    }
+
+    console.log(this.weapon.elements)
+
+    this.message.addField('Elements', elementsString, true)
+  }
+
+  private mapElderSeal (): void {
+    this.message.addField(
+      'Elderseal',
+        `${this.weapon.elderseal ? ':white_check_mark:' : ':x:'}`,
+        true
+    )
   }
 }
