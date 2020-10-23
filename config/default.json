@@ -1,5 +1,10 @@
 {
-  "bot": {
-    "prefix": "~"
-  }
+    "bot": {
+        "prefix": "~"
+    },
+    "emojis": {
+        "star": ":star:",
+        "check": ":white_check_mark:",
+        "x": ":x:"
+    }
 }
