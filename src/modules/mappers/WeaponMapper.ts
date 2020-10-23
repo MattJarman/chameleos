@@ -38,8 +38,6 @@ export default class WeaponMapper {
       elementsString += `${element.element} ${element.hidden ? '(hidden)' : ''} - ${element.attack}\n`
     }
 
-    console.log(this.weapon.elements)
-
     this.message.addField('Elements', elementsString, true)
   }
 
